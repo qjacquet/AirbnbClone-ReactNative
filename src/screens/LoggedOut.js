@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Alert,
   Text,
   View,
   Image,
@@ -17,22 +18,23 @@ const airbnbLogo = require('../img/airbnb-logo.png');
 
 export default class LoggedOut extends Component {
   static navigationOptions = ({ navigation }) => ({
+    headerTitle: () => null,
     headerRight: () => <NavBarButton handleButtonPress={() => navigation.navigate('LogIn')} location="right" color={colors.white} text="Log In" />,
     headerStyle: transparentHeaderStyle,
     headerTransparent: true,
     headerTintColor: colors.white,
   });
 
-  static onFacebookPress() {
-    alert('Facebook button pressed');
+  onFacebookPress = () => {
+    Alert.alert('Facebook button pressed');
   }
 
-  static onCreateAccountPress() {
-    alert('Create Account button pressed');
+  onCreateAccountPress = () => {
+    Alert.alert('Create Account button pressed');
   }
 
-  static onMoreOptionsPress() {
-    alert('More options button pressed');
+  onMoreOptionsPress = () => {
+    Alert.alert('More options button pressed');
   }
 
   render() {
